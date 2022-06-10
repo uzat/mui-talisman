@@ -1,5 +1,5 @@
 import React from 'react';
-import './persona.component.scss'
+import './persona.styles.scss'
 
 import Avatar from '@mui/material/Avatar';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
@@ -20,17 +20,18 @@ const HtmlTooltip = styled(({ className, ...props }) => (
   }));
 
 const Persona = ({ persona }) => {
-    const { imageUrl, tag, age, isMarried, smoker } = persona;
+    const { imageUrl, name, age, status, smoker, diet, drinks } = persona;
     return (
         <HtmlTooltip
-        title={
-          <React.Fragment>
-            <Typography color="inherit">Meet {tag}!</Typography>
-            <em>{"Age: "}</em><b>{age}</b><br/><em>{"Status: "}</em><b>{isMarried}</b><br/>{' '}
-            <em>{"Smoker: "}</em><b>{smoker}</b><br/>
-          </React.Fragment>
-        }
-      >
+          title={
+            <React.Fragment>
+              <Typography color="inherit">Meet {name}!</Typography>
+              <em>{"Age: "}</em><b>{age}</b><br/><em>{"Status: "}</em><b>{status}</b><br/>{' '}
+              <em>{"Smoker: "}</em><b>{smoker}</b><br/><em>{"Diet: "}</em><b>{diet}</b><br/>{' '}
+              <em>{"Drinks: "}</em><b>{drinks}</b><br/>
+            </React.Fragment>
+          }
+        >
         <Avatar className='av' src={imageUrl} alt='Single male' sx={{ width: 168, height: 168 }} />
         </HtmlTooltip>
     )
