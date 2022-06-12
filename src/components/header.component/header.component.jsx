@@ -1,11 +1,17 @@
 import React from 'react'
+import './header.styles.scss'
 
 function Title() {
   return (
     <div>
-      <h1>Choose your persona...</h1>
+      <div>
+        <h1>TALisman</h1>
+      </div>
+      <div>
+        <h2>Choose your persona...</h2>
+      </div>
     </div>
   )
 }
 
-export default Title
+export default Title;
